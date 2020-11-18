@@ -6,15 +6,11 @@
 
 
 // nuova versione
-var userInput = prompt("Scegli, Pari o Dispari?");
-userInput = userInput.toLowerCase();
-userInput = userInput[0].toUpperCase() + userInput.slice(1);
+var userInput = capitalizerFirstLetter(prompt("Scegli, Pari o Dispari?"));
 
 while ((userInput != "Pari") && (userInput != "Dispari")) {
   alert("Errore");
-  userInput = prompt("Scegli, Pari o Dispari?");
-  userInput = userInput.toLowerCase();
-  userInput = userInput[0].toUpperCase() + userInput.slice(1);
+  var userInput = capitalizerFirstLetter(prompt("Scegli, Pari o Dispari?"));
 }
 
 var userNumber = parseInt(prompt("Scegli un numero da 1 a 5"));
@@ -44,5 +40,13 @@ function isEven (result) {
   if (result % 2 == 0) {
     j = true;
   }
+  return j;
+}
+
+function capitalizerFirstLetter (word) {
+  var j;
+  word = word.toLowerCase();
+  word = word[0].toUpperCase() + word.slice(1);
+  j = word;
   return j;
 }
