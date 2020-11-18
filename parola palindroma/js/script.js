@@ -8,5 +8,8 @@ var userInput = prompt("inserisci una parola");
 // inverto la parola inserita
 var reverseUserInput = userInput.split("").reverse().join("");
 console.log(reverseUserInput);
-
-// creo la funzione per invertire la parola
+if (userInput == reverseUserInput) {
+  alert("parola palindroma");
+} else {
+  alert("parola non palindroma");
+}
