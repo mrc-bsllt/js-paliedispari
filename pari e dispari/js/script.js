@@ -6,6 +6,11 @@
 
 
 // nuova versione
+var textChoice = document.getElementById("text_choice");
+var number_choice = document.getElementById("number_choice");
+var my_choice = document.getElementById("my_choice");
+var sum = document.getElementById("sum");
+var result = document.getElementById("result");
 var userInput = capitalizerFirstLetter(prompt("Scegli, Pari o Dispari?"));
 
 while ((userInput != "Pari") && (userInput != "Dispari")) {
@@ -21,12 +26,19 @@ while ((isNaN(userNumber)) || (userNumber < 1) || (userNumber > 5)) {
 var pcNumber = randomNumber(1, 6);
 var somma = userNumber + pcNumber;
 
+textChoice.innerHTML = userInput;
+number_choice.innerHTML = userNumber;
+my_choice.innerHTML = pcNumber;
+sum.innerHTML = somma;
+
+
+
 if (isEven(somma) && userInput == "Pari") {
-  alert("Hai vinto");
+  result.innerHTML = "Hai Vinto";
 } else if (!isEven(somma) && userInput == "Dispari") {
-  alert("Hai vinto");
+  result.innerHTML = "Hai Vinto";
 } else {
-  alert("Hai perso!")
+  result.innerHTML = "Hai Perso!";
 }
 
 // funzioni
