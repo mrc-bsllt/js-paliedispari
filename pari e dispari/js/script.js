@@ -4,35 +4,45 @@
 // Sommiamo i due numeri.
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione).
 
-// chiedo all'utente pari o Dispari
-var userInput = prompt("Pari o Dispari?");
 
-// chiedo all'utente un numero da 1 a 5
-var userNumber = parseInt(prompt("Inserisci un numero da 1 a 5"));
+// nuova versione
+var userInput = prompt("Scegli, Pari o Dispari?");
+userInput = userInput.toLowerCase();
+userInput = userInput[0].toUpperCase() + userInput.slice(1);
 
-// creo la funzione per il numero casuale del computer
-function randomNumber (min, max) {
-  var randomNumber = Math.floor(Math.random() * (max - min) + min);
-  return randomNumber;
+while ((userInput != "Pari") && (userInput != "Dispari")) {
+  alert("Errore");
+  userInput = prompt("Scegli, Pari o Dispari?");
+  userInput = userInput.toLowerCase();
+  userInput = userInput[0].toUpperCase() + userInput.slice(1);
 }
 
+var userNumber = parseInt(prompt("Scegli un numero da 1 a 5"));
+while ((isNaN(userNumber)) || (userNumber < 1) || (userNumber > 5)) {
+  alert("Errore");
+  userNumber = parseInt(prompt("Scegli un numero da 1 a 5"));
+}
 var pcNumber = randomNumber(1, 6);
-console.log(pcNumber);
-var addition = pcNumber + userNumber;
-console.log(addition);
+var somma = userNumber + pcNumber;
 
-// creo la funzione per stabilire se il numero sommato è pari o dispari
-function isEven (num) {
-  var risultato = false;
-  if (num % 2 == 0) {
-    risultato = true;
-  }
-  return risultato;
+if (isEven(somma) && userInput == "Pari") {
+  alert("Hai vinto");
+} else if (!isEven(somma) && userInput == "Dispari") {
+  alert("Hai vinto");
+} else {
+  alert("Hai perso!")
 }
 
-// comparo la somma con il risultato
-if (isEven(addition)) {
-  alert("numero pari")
-} else {
-  alert("numero dispari")
+// funzioni
+function randomNumber (min, max) {
+  var j = Math.floor(Math.random() * (max - min) + min);
+  return j;
+}
+
+function isEven (result) {
+  var j = false;
+  if (result % 2 == 0) {
+    j = true;
+  }
+  return j;
 }

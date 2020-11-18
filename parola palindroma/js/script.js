@@ -19,10 +19,11 @@
 
 // seconda soluzione
 var inputUtente = prompt("Inserisci una parola");
-var inputReverse = "";
+var inputReverse;
 
 for (i = inputUtente.length - 1; i >= 0; i-- ) {
   inputReverse += inputUtente[i];
+  console.log(inputUtente[i]);
 }
 
 if (palindroma(inputUtente, inputReverse)) {
