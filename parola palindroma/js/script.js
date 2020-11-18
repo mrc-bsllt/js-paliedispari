@@ -8,6 +8,7 @@ var userInput = prompt("inserisci una parola");
 // inverto la parola inserita
 var reverseUserInput = userInput.split("").reverse().join("");
 
+// creo la funzione
 function palindroma (word1, word2) {
   var risultato;
   if (word1 == word2) {
@@ -18,6 +19,7 @@ function palindroma (word1, word2) {
   return risultato;
 }
 
+// stampo il risultato
 if (palindroma(userInput, reverseUserInput)) {
   alert("parola palindroma");
 } else {
