@@ -44,9 +44,7 @@ function isEven (result) {
 }
 
 function capitalizerFirstLetter (word) {
-  var j;
   word = word.toLowerCase();
   word = word[0].toUpperCase() + word.slice(1);
-  j = word;
-  return j;
+  return word;
 }
