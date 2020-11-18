@@ -7,8 +7,18 @@ var userInput = prompt("inserisci una parola");
 
 // inverto la parola inserita
 var reverseUserInput = userInput.split("").reverse().join("");
-console.log(reverseUserInput);
-if (userInput == reverseUserInput) {
+
+function palindroma (word1, word2) {
+  var risultato;
+  if (word1 == word2) {
+    risultato = true;
+  } else {
+    risultato = false;
+  }
+  return risultato;
+}
+
+if (palindroma(userInput, reverseUserInput)) {
   alert("parola palindroma");
 } else {
   alert("parola non palindroma");
