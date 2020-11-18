@@ -6,20 +6,33 @@
 
 // chiedo all'utente pari o Dispari
 var userInput = prompt("Pari o Dispari?");
-// mi accerto che scelga correttamente
-if (!isNaN(userInput) || (userInput != "Pari") && (userInput != "Dispari")) {
-  alert("Errore!")
-}
 
 // chiedo all'utente un numero da 1 a 5
 var userNumber = parseInt(prompt("Inserisci un numero da 1 a 5"));
-// mi accerto che scelga correttamente
-if (isNaN(userNumber) || (userNumber < 1) || (userNumber > 5)) {
-  alert("Errore! Inserisci un numero da 1 a 5");
-}
 
 // creo la funzione per il numero casuale del computer
 function randomNumber (min, max) {
-  var pcRandomNumber = Math.floor(Math.random() * (max - min) + min);
-  return pcRandomNumber;
+  var randomNumber = Math.floor(Math.random() * (max - min) + min);
+  return randomNumber;
+}
+
+var pcNumber = randomNumber(1, 6);
+console.log(pcNumber);
+var addition = pcNumber + userNumber;
+console.log(addition);
+
+// creo la funzione per stabilire se il numero sommato è pari o dispari
+function isEven (num) {
+  var risultato = false;
+  if (num % 2 == 0) {
+    risultato = true;
+  }
+  return risultato;
+}
+
+// comparo la somma con il risultato
+if (isEven(addition)) {
+  alert("numero pari")
+} else {
+  alert("numero dispari")
 }
